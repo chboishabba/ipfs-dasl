@@ -1,2 +1,8 @@
 targets/go_dasl/src
 targets/rust_atproto_dasl/src
+runner/target
+targets/rust_atproto_dasl/adapter/target
+targets/go_dasl/adapter/go_dasl_adapter
+reports/
+.DS_Store
+*.log

@@ -13,6 +13,12 @@ The repo contains only `DASL Fuzz Testing Insights.pdf`. Extracted the Winter 20
 - Detect and minimize cross-implementation divergences where the same DASL input can be interpreted differently even when hashes match.
 - Primary invariant: if two implementations accept the same input, their canonical output must match byte-for-byte.
 - Proposal must emphasize measurable outputs and delivery milestones aligned to the RFP evaluation criteria.
+
+## Current Execution State
+
+- Differential runner implemented in Rust with format-aware parsing (`drisl1`, `cid`, `car`) and idempotence checks.
+- Go and Rust adapters wired; CID validity divergences discovered during format-aware fuzzing (50 witnesses).
+- CI conformance workflow added for seeds + regressions.
 - Proposal must be <= 2 pages with required sections.
 - Outputs must be MIT and/or Apache-2.0 licensed.
 - Proposal deadline: Sunday, March 15, 2026.

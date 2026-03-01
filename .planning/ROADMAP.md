@@ -76,6 +76,9 @@ Plans:
 Plans:
 - [ ] 06-01: Define repo layout and bootstrap Rust runner CLI.
 - [ ] 06-02: Implement target adapters (Go + Rust) and emit output schema.
+- [ ] 06-03: Add format-aware parsing (DRISL1/CID/CAR), idempotence checks, and bounded fuzzing.
+- [ ] 06-04: Triage CID validity divergences and add regression witnesses.
+  - [ ] Draft triage notes for first 5 CID witnesses in `.planning/triage/cid/`.
 
 ## Progress
 

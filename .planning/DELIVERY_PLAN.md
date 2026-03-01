@@ -9,6 +9,7 @@
 2. **Fuzzing Harness + Regression Runner**
    - A harness that executes decoders (and secondarily encoders) for `go-dasl` and `atproto-dasl` against the corpus and generated cases.
    - A regression runner that replays corpus cases and records outcomes.
+   - Format-aware parsing paths for `drisl1`, `cid`, and `car`.
 
 3. **Differential Testing Output Schema**
    - A stable output format (JSON or CSV) that records per-implementation accept/reject outcomes, error classes, and canonical output bytes.
