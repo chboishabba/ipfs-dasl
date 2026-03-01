@@ -25,6 +25,15 @@ Bounds:
 - Divergences: 50 (CID validity disagreements)
 - Idempotence failures: 0
 
+## CID Validity Divergence Classification (Week 1)
+
+- Total divergences: 50
+- 94% (47/50) length boundary handling
+- 4% (2/50) hash_type handling
+- 2% (1/50) codec handling
+
+Interpretation: divergences are overwhelmingly concentrated in CID length boundary enforcement, indicating a systematic strictness/permissiveness difference rather than random instability.
+
 ## Notes
 
 - CID/CAR header-only seeds now use format-aware parsing paths.

@@ -10,6 +10,7 @@
   - Contact method: [issue / email / forum]
   - Evidence link (issue/PR/email thread): [fill]
   - Status: Not contacted
+  - Draft outreach: `.planning/MAINTAINER_OUTREACH.md`
 
 - **atproto-dasl**
   - Crate: atproto-dasl (docs.rs)
@@ -18,6 +19,7 @@
   - Contact method: [issue / email / forum]
   - Evidence link (issue/PR/email thread): [fill]
   - Status: Not contacted
+  - Draft outreach: `.planning/MAINTAINER_OUTREACH.md`
 
 ## Notes
 

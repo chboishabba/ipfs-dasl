@@ -25,40 +25,46 @@ pub fn mutate(input: &[u8], format: &str, rng: &mut impl Rng) -> Vec<u8> {
 
 fn mutate_drisl(input: &[u8], rng: &mut impl Rng) -> Vec<u8> {
     if input.is_empty() {
-        return random_append(input, rng);
+        return boundary_bytes();
     }
 
-    match rng.gen_range(0..5) {
-        0 => truncate(input, rng),
-        1 => bitflip(input, rng),
-        2 => random_append(input, rng),
-        3 => duplicate_region(input, rng),
-        _ => drop_random_chunk(input, rng),
+    let roll: u8 = rng.gen_range(0..100);
+    if roll < 40 {
+        boundary_replace(input, rng)
+    } else if roll < 70 {
+        truncate(input, rng)
+    } else if roll < 90 {
+        random_append(input, rng)
+    } else {
+        if rng.gen_bool(0.5) {
+            bitflip(input, rng)
+        } else {
+            duplicate_region(input, rng)
+        }
     }
 }
 
 fn mutate_cid(input: &[u8], rng: &mut impl Rng) -> Vec<u8> {
-    if input.is_empty() {
-        return random_append(input, rng);
-    }
-    // CID bytes are fixed-length; prefer bit flips and tiny truncations.
-    match rng.gen_range(0..3) {
-        0 => bitflip(input, rng),
-        1 => truncate(input, rng),
-        _ => random_append(input, rng),
+    let roll: u8 = rng.gen_range(0..100);
+    if roll < 60 {
+        cid_boundary(input, rng)
+    } else if roll < 80 {
+        truncate_or_pad(input, rng)
+    } else {
+        bitflip(input, rng)
     }
 }
 
 fn mutate_car(input: &[u8], rng: &mut impl Rng) -> Vec<u8> {
-    if input.is_empty() {
-        return random_append(input, rng);
-    }
-    // CAR headers are CBOR; keep mutations small to preserve structure sometimes.
-    match rng.gen_range(0..4) {
-        0 => bitflip(input, rng),
-        1 => truncate(input, rng),
-        2 => drop_random_chunk(input, rng),
-        _ => random_append(input, rng),
+    let roll: u8 = rng.gen_range(0..100);
+    if roll < 50 {
+        car_boundary(input, rng)
+    } else if roll < 70 {
+        truncate(input, rng)
+    } else if roll < 90 {
+        bitflip(input, rng)
+    } else {
+        random_append(input, rng)
     }
 }
 
@@ -97,14 +103,65 @@ fn duplicate_region(input: &[u8], rng: &mut impl Rng) -> Vec<u8> {
     out
 }
 
-fn drop_random_chunk(input: &[u8], rng: &mut impl Rng) -> Vec<u8> {
-    if input.len() < 2 {
-        return truncate(input, rng);
-    }
-    let start = rng.gen_range(0..input.len() - 1);
-    let end = rng.gen_range(start + 1..input.len());
-    let mut out = Vec::with_capacity(input.len() - (end - start));
-    out.extend_from_slice(&input[..start]);
-    out.extend_from_slice(&input[end..]);
+fn boundary_replace(input: &[u8], rng: &mut impl Rng) -> Vec<u8> {
+    let mut out = input.to_vec();
+    let boundary = [0x17u8, 0x18, 0x19, 0x1a, 0x1b, 0x58, 0x59, 0x5a, 0x9f, 0xbf, 0xff];
+    let i = rng.gen_range(0..out.len());
+    out[i] = boundary[rng.gen_range(0..boundary.len())];
     out
+}
+
+fn boundary_bytes() -> Vec<u8> {
+    vec![0x18, 0x00, 0x9f, 0xff]
+}
+
+fn truncate_or_pad(input: &[u8], rng: &mut impl Rng) -> Vec<u8> {
+    let mut out = input.to_vec();
+    if out.len() >= 36 && rng.gen_bool(0.5) {
+        out.truncate(35);
+        return out;
+    }
+    if out.len() >= 36 {
+        out.push(rng.gen());
+        return out;
+    }
+    random_append(input, rng)
+}
+
+fn cid_boundary(input: &[u8], rng: &mut impl Rng) -> Vec<u8> {
+    let mut out = if input.len() >= 36 { input[..36].to_vec() } else { input.to_vec() };
+    if out.len() < 4 {
+        return truncate_or_pad(&out, rng);
+    }
+    match rng.gen_range(0..5) {
+        0 => out[0] = if out[0] == 0x01 { 0x00 } else { 0x01 },
+        1 => out[1] = if out[1] == 0x55 { 0x70 } else { 0x55 },
+        2 => out[2] = if out[2] == 0x12 { 0x13 } else { 0x12 },
+        3 => out[3] = if out[3] == 0x20 { 0x1f } else { 0x20 },
+        _ => return truncate_or_pad(&out, rng),
+    }
+    out
+}
+
+fn car_boundary(input: &[u8], rng: &mut impl Rng) -> Vec<u8> {
+    let mut out = input.to_vec();
+    if out.is_empty() {
+        return boundary_bytes();
+    }
+
+    // try to flip the version byte if "version" key is present
+    if let Some(pos) = find_subslice(&out, b"version") {
+        let val_idx = pos + b"version".len();
+        if val_idx < out.len() {
+            out[val_idx] = if out[val_idx] == 0x01 { 0x02 } else { 0x01 };
+            return out;
+        }
+    }
+
+    // fallback: replace a random byte with boundary values
+    boundary_replace(&out, rng)
+}
+
+fn find_subslice(haystack: &[u8], needle: &[u8]) -> Option<usize> {
+    haystack.windows(needle.len()).position(|w| w == needle)
 }

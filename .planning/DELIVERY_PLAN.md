@@ -16,6 +16,7 @@
 
 4. **Spec Feedback Loop Artifacts**
    - Issue templates or reports capturing divergences with minimal repro inputs, plus proposed spec clarifications.
+   - CID/CAR divergence triage notes and categorized repros.
 
 ## Acceptance Criteria
 
@@ -39,6 +40,7 @@
 
 5. **Spec Feedback Loop Artifacts**
    - Each divergence has an associated spec feedback note that states the ambiguous behavior and proposes clarification.
+   - CID validity divergences are classified by codec/hash/digest-length rules.
 
 ## Notes
 
