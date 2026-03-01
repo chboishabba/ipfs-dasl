@@ -1,0 +1,14 @@
+/home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/deps/serde-f23b3fff878160e5.d: /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/build/serde-d5b2e0d3d6b0c30c/out/private.rs
+
+/home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/deps/libserde-f23b3fff878160e5.rlib: /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/build/serde-d5b2e0d3d6b0c30c/out/private.rs
+
+/home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/deps/libserde-f23b3fff878160e5.rmeta: /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/build/serde-d5b2e0d3d6b0c30c/out/private.rs
+
+/home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/build/serde-d5b2e0d3d6b0c30c/out/private.rs:
+
+# env-dep:OUT_DIR=/home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/build/serde-d5b2e0d3d6b0c30c/out

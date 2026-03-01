@@ -1,0 +1,7 @@
+[[target]]
+name = "go-dasl"
+cmd = "./targets/go_dasl/run.sh"
+
+[[target]]
+name = "atproto-dasl"
+cmd = "./targets/rust_atproto_dasl/run.sh"

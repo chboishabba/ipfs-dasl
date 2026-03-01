@@ -1,0 +1,25 @@
+{
+  "run_id": "1772367367540",
+  "case_id": "fuzz",
+  "format": "cid",
+  "input_hash": "f95efb7ab7a8b7da09dc03d8746eb1b419cada4edf36daf83e59f51467aa534f",
+  "results": [
+    {
+      "impl_id": "go-dasl",
+      "accepted": false,
+      "error_class": "decode_error",
+      "canonical_bytes": null,
+      "time_ms": 3
+    },
+    {
+      "impl_id": "atproto-dasl",
+      "accepted": true,
+      "error_class": "none",
+      "canonical_bytes": "015512200000000000000000000000000000000000000000000000000000000000000000",
+      "time_ms": 2
+    }
+  ],
+  "invariant_status": "not_applicable",
+  "idempotence_status": "pass",
+  "divergence_notes": "validity_disagreement"
+}

@@ -1,0 +1,14 @@
+/home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/deps/thiserror-522776ff4d768972.d: /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/build/thiserror-c66aa4a13ebcadbe/out/private.rs
+
+/home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/deps/libthiserror-522776ff4d768972.rlib: /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/build/thiserror-c66aa4a13ebcadbe/out/private.rs
+
+/home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/deps/libthiserror-522776ff4d768972.rmeta: /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/build/thiserror-c66aa4a13ebcadbe/out/private.rs
+
+/home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs:
+/home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs:
+/home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs:
+/home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs:
+/home/c/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs:
+/home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/build/thiserror-c66aa4a13ebcadbe/out/private.rs:
+
+# env-dep:OUT_DIR=/home/c/Documents/code/ipfs-dasl/targets/rust_atproto_dasl/adapter/target/release/build/thiserror-c66aa4a13ebcadbe/out

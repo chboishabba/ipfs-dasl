@@ -1,0 +1,50 @@
+name: DASL Conformance
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  conformance:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Install Rust
+      - uses: dtolnay/rust-toolchain@stable
+
+      # Install Go
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      # Build Rust runner
+      - name: Build runner
+        run: |
+          cd runner
+          cargo build --release
+
+      # Build Go adapter
+      - name: Build Go adapter
+        run: |
+          cd targets/go_dasl/adapter
+          go mod tidy
+          go build -o go_dasl_adapter .
+
+      # Build Rust adapter
+      - name: Build Rust adapter
+        run: |
+          cd targets/rust_atproto_dasl/adapter
+          cargo build --release
+
+      # Run seed corpus
+      - name: Run conformance (seed)
+        run: |
+          ./runner/target/release/differential-runner run corpus/seed
+
+      # Run regression corpus
+      - name: Run conformance (regressions)
+        run: |
+          ./runner/target/release/differential-runner run corpus/regressions

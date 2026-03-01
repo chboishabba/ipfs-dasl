@@ -1,0 +1,9 @@
+[package]
+name = "atproto_dasl_adapter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+atproto-dasl = { path = "../src/crates/atproto-dasl" }
+serde_json = "1.0"
+hex = "0.4"
